@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>qual pais</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color:rgb(110, 110, 110);
+            color: rgb(196, 197, 250);
+        }
+
+        input#txtpais{
+            width: 110px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Qual seu pais ?</h1>
+    <input type="text" name="txtpais" id="txtpais">
+    <input type="button" value="Checar" onclick="check()">
+    <div id="res">
+
+    </div>
+
+    <script>
+        function check() {
+            var txtp = document.getElementById('txtpais')
+            var res = document.getElementById('res')
+            var pais = String(txtp.value)
+            
+            res.innerHTML = `Seu pais é ${pais}`
+            if (pais == 'brasil') {
+                res.innerHTML = '<p> tu se fudeu </p>'
+                res.style.background = 'red'
+            } else {
+                res.innerHTML = '<p> parabens, ainda bem que voce nao é do brasil<p/>'
+            }
+        }
+    </script>
+</body>
+</html>
